@@ -10,7 +10,6 @@ router.register(r'users', views.UserViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # path('', include(router.urls)),
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

@@ -16,21 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-)4q-brg&_yo+ir+l2p*k^9^wafwc)(pbd-f2)9su5uq-1&y+r'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
-
 # Rest framework configuration.
 REST_FRAMEWORK = {
-    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    # 'PAGE_SIZE': 10,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         # 'rest_framework.authentication.SessionAuthentication', # To keep the Browsable API
@@ -56,11 +45,6 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'corsheaders',
 ]
-
-# AUTHENTICATION_BACKENDS = (
-#     'django.contrib.auth.backends.ModelBackend' # To keep the Browsable API
-#     'oauth2_provider.backends.OAuth2Backend',
-# )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
